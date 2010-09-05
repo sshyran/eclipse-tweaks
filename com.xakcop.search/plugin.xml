@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.commands">
+      <category name="Edit" id="com.xakcop.search.commands.category">
+      </category>
+      <command
+            name="Search Next"
+            categoryId="com.xakcop.search.commands.category"
+            id="com.xakcop.search.commands.searchNext">
+      </command>
+      <command
+            name="Search Previous"
+            categoryId="com.xakcop.search.commands.category"
+            id="com.xakcop.search.commands.searchPrevious">
+      </command>
+   </extension>
+   
+   <extension point="org.eclipse.ui.handlers">
+      <handler
+            commandId="com.xakcop.search.commands.searchNext"
+            class="com.xakcop.search.handlers.SearchNextHandler">
+      </handler>
+      <handler
+            commandId="com.xakcop.search.commands.searchPrevious"
+            class="com.xakcop.search.handlers.SearchPreviousHandler">
+      </handler>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.xakcop.search.commands.searchNext"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+8"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+      <key
+            commandId="com.xakcop.search.commands.searchPrevious"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+
+</plugin>
