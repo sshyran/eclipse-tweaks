@@ -8,10 +8,10 @@ import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.ITextSelection;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.commands.ICommandService;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.eclipse.ui.part.MultiPageEditorPart;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
 
@@ -40,7 +40,11 @@ public abstract class SearchAbstractHandler extends AbstractHandler {
     }
 
     boolean initContext(ExecutionEvent event) throws ExecutionException {
-        IEditorPart editorPart = HandlerUtil.getActiveEditorChecked(event);
+        Object editorPart = HandlerUtil.getActiveEditorChecked(event);
+        if (editorPart instanceof MultiPageEditorPart) {
+            MultiPageEditorPart mpe = (MultiPageEditorPart) editorPart;
+            editorPart = mpe.getSelectedPage();
+        }
         if (!(editorPart instanceof ITextEditor)) {
             return false;
         }

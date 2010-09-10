@@ -32,13 +32,13 @@
       <key
             commandId="com.xakcop.search.commands.searchNext"
             contextId="org.eclipse.ui.contexts.window"
-            sequence="M1+8"
+            sequence="M1+K"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
       </key>
       <key
             commandId="com.xakcop.search.commands.searchPrevious"
             contextId="org.eclipse.ui.contexts.window"
-            sequence="M1+6"
+            sequence="M1+M2+K"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
       </key>
    </extension>
