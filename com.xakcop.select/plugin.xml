@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.eclipse.ui.commands">
+      <category name="Navigate" id="com.xakcop.category.select">
+      </category>
+      <command
+            name="Select project"
+            categoryId="com.xakcop.category.select"
+            id="com.xakcop.commands.selectProject">
+      </command>
+   </extension>
+   
+   <extension point="org.eclipse.ui.handlers">
+      <handler
+            commandId="com.xakcop.commands.selectProject"
+            class="com.xakcop.handlers.SelectActiveProject">
+      </handler>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.xakcop.commands.selectProject"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="SHIFT+M1+BS"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+</plugin>
